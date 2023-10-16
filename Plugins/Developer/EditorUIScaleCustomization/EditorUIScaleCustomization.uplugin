@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "EditorUIScaleCustomization",
+	"Description": "",
+	"Category": "Editor",
+	"CreatedBy": "KTA552",
+	"CreatedByURL": "https://github.com/KTA552/UE-EditorUIScaleCustomization",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "EditorUIScaleCustomization",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

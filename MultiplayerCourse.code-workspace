@@ -1,0 +1,868 @@
+{
+	"folders": [
+		{
+			"name": "MultiplayerCourse",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/home/tfuchs/Softwares/UE/UnrealEngine"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp",
+			"vadimcn.vscode-lldb",
+			"ms-vscode.mono-debug",
+			"dfarley1.file-picker"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "MultiplayerCourse Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Test",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Test",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Test",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Shipping",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Shipping",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"Linux",
+					"Shipping",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Test",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Test",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Test",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourse LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourse LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourse",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourseEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"Debug",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourseEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"DebugGame",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerCourseEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			},
+			{
+				"label": "MultiplayerCourseEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"MultiplayerCourseEditor",
+					"Linux",
+					"Development",
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch MultiplayerCourse (Debug)",
+				"request": "launch",
+				"program": "/home/tfuchs/Projects/UE/MultiplayerCourse/Binaries/Linux/MultiplayerCourse-Linux-Debug",
+				"preLaunchTask": "MultiplayerCourse Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourse (DebugGame)",
+				"request": "launch",
+				"program": "/home/tfuchs/Projects/UE/MultiplayerCourse/Binaries/Linux/MultiplayerCourse-Linux-DebugGame",
+				"preLaunchTask": "MultiplayerCourse Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourse (Development)",
+				"request": "launch",
+				"program": "/home/tfuchs/Projects/UE/MultiplayerCourse/Binaries/Linux/MultiplayerCourse",
+				"preLaunchTask": "MultiplayerCourse Linux Development Build",
+				"args": [
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourse (Test)",
+				"request": "launch",
+				"program": "/home/tfuchs/Projects/UE/MultiplayerCourse/Binaries/Linux/MultiplayerCourse-Linux-Test",
+				"preLaunchTask": "MultiplayerCourse Linux Test Build",
+				"args": [
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourse (Shipping)",
+				"request": "launch",
+				"program": "/home/tfuchs/Projects/UE/MultiplayerCourse/Binaries/Linux/MultiplayerCourse-Linux-Shipping",
+				"preLaunchTask": "MultiplayerCourse Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourseEditor (Debug)",
+				"request": "launch",
+				"program": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "MultiplayerCourseEditor Linux Debug Build",
+				"args": [
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject"
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourseEditor (DebugGame)",
+				"request": "launch",
+				"program": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "MultiplayerCourseEditor Linux DebugGame Build",
+				"args": [
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject"
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch MultiplayerCourseEditor (Development)",
+				"request": "launch",
+				"program": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "MultiplayerCourseEditor Linux Development Build",
+				"args": [
+					"/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject"
+				],
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/home/tfuchs/Softwares/UE/UnrealEngine/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/tfuchs/Projects/UE/MultiplayerCourse/MultiplayerCourse.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/home/tfuchs/Softwares/UE/UnrealEngine"
+			}
+		]
+	}
+}
