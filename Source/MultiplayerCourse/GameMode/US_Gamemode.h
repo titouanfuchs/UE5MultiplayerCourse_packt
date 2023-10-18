@@ -13,4 +13,7 @@ UCLASS()
 class MULTIPLAYERCOURSE_API AUS_Gamemode : public AGameMode
 {
 	GENERATED_BODY()
+
+public:
+	AUS_Gamemode();
 };
