@@ -15,6 +15,12 @@ public:
 	// Sets default values for this character's properties
 	AUS_Character();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera", meta=(AllowPrivateAccess = true))
+	TObjectPtr<class USpringArmComponent> CameraBoom;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera", meta=(AllowPrivateAccess = true))
+	TObjectPtr<class UCameraComponent> Camera;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -25,4 +31,7 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	FORCEINLINE USpringArmComponent* GetCameraBoom() const {return CameraBoom;}
+	FORCEINLINE UCameraComponent* GetCamera() const {return Camera;}
 };
