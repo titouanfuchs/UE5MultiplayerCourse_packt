@@ -6,14 +6,13 @@
 #include "GameFramework/Character.h"
 #include "US_Character.generated.h"
 
+struct FInputActionValue;
+class UInputAction;
+
 UCLASS()
 class MULTIPLAYERCOURSE_API AUS_Character : public ACharacter
 {
 	GENERATED_BODY()
-
-public:
-	// Sets default values for this character's properties
-	AUS_Character();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera", meta=(AllowPrivateAccess = true))
 	TObjectPtr<class USpringArmComponent> CameraBoom;
@@ -21,9 +20,34 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Camera", meta=(AllowPrivateAccess = true))
 	TObjectPtr<class UCameraComponent> Camera;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input", meta=(AllowPrivateAccess = true))
+	TObjectPtr<class UInputMappingContext> DefaultMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input", meta=(AllowPrivateAccess = true))
+	TObjectPtr<UInputAction> MoveAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input", meta=(AllowPrivateAccess = true))
+	TObjectPtr<UInputAction> LookAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input", meta=(AllowPrivateAccess = true))
+	TObjectPtr<UInputAction> SprintAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input", meta=(AllowPrivateAccess = true))
+	TObjectPtr<UInputAction> InteractAction;
+	
+public:
+	// Sets default values for this character's properties
+	AUS_Character();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	void Move (const FInputActionValue& Value);
+	void Look (const FInputActionValue& Value);
+	void SprintStart (const FInputActionValue& Value);
+	void SprintEnd (const FInputActionValue& Value);
+	void Interact (const FInputActionValue& Value);
 
 public:
 	// Called every frame
