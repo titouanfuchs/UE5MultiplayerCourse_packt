@@ -89,10 +89,12 @@ void AUS_Character::Look(const FInputActionValue& Value)
 
 void AUS_Character::SprintStart(const FInputActionValue& Value)
 {
+	GetCharacterMovement()->MaxWalkSpeed = 3000.f;
 }
 
 void AUS_Character::SprintEnd(const FInputActionValue& Value)
 {
+	GetCharacterMovement()->MaxWalkSpeed = 500.f;
 }
 
 void AUS_Character::Interact(const FInputActionValue& Value)
