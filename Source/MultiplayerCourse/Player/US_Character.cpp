@@ -63,6 +63,18 @@ void AUS_Character::BeginPlay()
 
 void AUS_Character::Move(const FInputActionValue& Value)
 {
+	const auto MovementVector = Value.Get<FVector2d>();
+
+	if (!Controller) return;
+
+	const auto Rotation = Controller->GetControlRotation();
+	const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+	const auto ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+	const auto RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+	AddMovementInput(ForwardDirection, MovementVector.Y);
+	AddMovementInput(RightDirection, MovementVector.X);
 }
 
 void AUS_Character::Look(const FInputActionValue& Value)
