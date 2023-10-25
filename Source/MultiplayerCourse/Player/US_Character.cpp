@@ -63,7 +63,7 @@ void AUS_Character::BeginPlay()
 
 void AUS_Character::Move(const FInputActionValue& Value)
 {
-	const auto MovementVector = Value.Get<FVector2d>();
+	const auto MovementVector = Value.Get<FVector2D>();
 
 	if (!Controller) return;
 
@@ -79,6 +79,12 @@ void AUS_Character::Move(const FInputActionValue& Value)
 
 void AUS_Character::Look(const FInputActionValue& Value)
 {
+	const auto LookAxisVector = Value.Get<FVector2D>();
+
+	if(!Controller) return;
+
+	AddControllerYawInput(LookAxisVector.X);
+	AddControllerPitchInput(LookAxisVector.Y);
 }
 
 void AUS_Character::SprintStart(const FInputActionValue& Value)
