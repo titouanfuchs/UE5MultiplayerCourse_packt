@@ -99,6 +99,7 @@ void AUS_Character::SprintEnd(const FInputActionValue& Value)
 
 void AUS_Character::Interact(const FInputActionValue& Value)
 {
+	GEngine->AddOnScreenDebugMessage(2, 5.f, FColor::Red, TEXT("Interact"));
 }
 
 // Called every frame
