@@ -22,6 +22,7 @@ ABasePickup::ABasePickup()
 	Mesh->SetupAttachment(SphereCollision);
 	Mesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
+	bNetLoadOnClient = false;
 	bReplicates = true;
 }
 
