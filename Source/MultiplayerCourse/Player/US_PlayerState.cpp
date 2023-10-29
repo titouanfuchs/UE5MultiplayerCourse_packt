@@ -5,6 +5,7 @@
 
 #include "US_Character.h"
 #include "Net/UnrealNetwork.h"
+#include "Stats/US_CharacterStats.h"
 
 void AUS_PlayerState::OnRep_Xp(int32 OldValue) const
 {
@@ -25,6 +26,8 @@ void AUS_PlayerState::AddXp(int32 Value)
 
 	if (const auto Character = Cast<AUS_Character>(GetPawn()))
 	{
+		if (Character->GetCharacterStats()->NextLevelXp >= Xp) return;
+		
 		GEngine->AddOnScreenDebugMessage(3, 5.f, FColor::Red, TEXT("Level Up!"));
 
 		CharacterLevel++;
