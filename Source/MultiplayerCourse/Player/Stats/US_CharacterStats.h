@@ -5,7 +5,7 @@
 #include "US_CharacterStats.generated.h"
 
 USTRUCT(BlueprintType)
-struct MULTIPLAYERCOURSE_API : FUS_CharacterStats : public FTableRowBase
+struct MULTIPLAYERCOURSE_API FUS_CharacterStats : public FTableRowBase
 {
 	GENERATED_BODY()
 

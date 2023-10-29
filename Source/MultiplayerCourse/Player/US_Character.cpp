@@ -10,6 +10,7 @@
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Stats/US_CharacterStats.h"
 
 
 // Sets default values
@@ -44,7 +45,22 @@ AUS_Character::AUS_Character()
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
-	
+}
+
+void AUS_Character::UpdateCharacterStats(int32 CharacterLevel)
+{
+	if (!CharacterDataTable) return;
+
+	TArray<FUS_CharacterStats*> CharacterStatsRow;
+	CharacterDataTable->GetAllRows<FUS_CharacterStats>(TEXT("US_Character"), CharacterStatsRow);
+
+	if (CharacterStatsRow.Num() < 0) return;
+
+	const auto NewCharacterLevel = FMath::Clamp(CharacterLevel, 1, CharacterStatsRow.Num());
+
+	CharacterStats = CharacterStatsRow[NewCharacterLevel - 1];
+
+	GetCharacterMovement()->MaxWalkSpeed = GetCharacterStats()->WalkSpeed;
 }
 
 // Called when the game starts or when spawned
@@ -59,6 +75,8 @@ void AUS_Character::BeginPlay()
 			SubSystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+	
+	UpdateCharacterStats(1);
 }
 
 void AUS_Character::Move(const FInputActionValue& Value)
@@ -89,12 +107,14 @@ void AUS_Character::Look(const FInputActionValue& Value)
 
 void AUS_Character::SprintStart(const FInputActionValue& Value)
 {
-	GetCharacterMovement()->MaxWalkSpeed = 3000.f;
+	if (!GetCharacterStats()) return;
+	
+	GetCharacterMovement()->MaxWalkSpeed = GetCharacterStats()->SprintSpeed;
 }
 
 void AUS_Character::SprintEnd(const FInputActionValue& Value)
 {
-	GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	GetCharacterMovement()->MaxWalkSpeed = GetCharacterStats()->WalkSpeed;
 }
 
 void AUS_Character::Interact(const FInputActionValue& Value)

@@ -8,6 +8,7 @@
 
 struct FInputActionValue;
 class UInputAction;
+struct FUS_CharacterStats;
 
 UCLASS()
 class MULTIPLAYERCOURSE_API AUS_Character : public ACharacter
@@ -34,10 +35,19 @@ class MULTIPLAYERCOURSE_API AUS_Character : public ACharacter
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input", meta=(AllowPrivateAccess = true))
 	TObjectPtr<UInputAction> InteractAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character Data", meta=(AllowPrivateAccess = true))
+	class UDataTable* CharacterDataTable;
+
+	struct FUS_CharacterStats* CharacterStats;
 	
 public:
 	// Sets default values for this character's properties
 	AUS_Character();
+
+	void UpdateCharacterStats(int32 CharacterLevel);
+
+	FORCEINLINE FUS_CharacterStats* GetCharacterStats() const {return CharacterStats;}
 
 protected:
 	// Called when the game starts or when spawned
