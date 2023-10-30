@@ -39,6 +39,9 @@ class MULTIPLAYERCOURSE_API AUS_Character : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character Data", meta=(AllowPrivateAccess = true))
 	class UDataTable* CharacterDataTable;
 
+	UPROPERTY()
+	AActor* InteractableActor;
+	
 	struct FUS_CharacterStats* CharacterStats;
 	
 public:
@@ -55,9 +58,18 @@ protected:
 
 	void Move (const FInputActionValue& Value);
 	void Look (const FInputActionValue& Value);
+	
 	void SprintStart (const FInputActionValue& Value);
+	UFUNCTION(Server, Reliable)
+	void SprintStart_Server();
+	
 	void SprintEnd (const FInputActionValue& Value);
+	UFUNCTION(Server, Reliable)
+	void SprintEnd_Server();
+
 	void Interact (const FInputActionValue& Value);
+	UFUNCTION(Server, Reliable)
+	void Interact_Server();
 
 public:
 	// Called every frame
