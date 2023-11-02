@@ -141,7 +141,7 @@ void AUS_Character::SprintEnd_Server_Implementation()
 
 void AUS_Character::Interact(const FInputActionValue& Value)
 {
-	GEngine->AddOnScreenDebugMessage(2, 5.f, FColor::Red, TEXT("Interact"));
+	//GEngine->AddOnScreenDebugMessage(2, 5.f, FColor::Red, TEXT("Interact"));
 	Interact_Server();
 }
 
