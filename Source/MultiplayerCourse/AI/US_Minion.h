@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "US_Minion.generated.h"
 
+class USphereComponent;
+class UPawnSensingComponent;
+
 UCLASS()
 class MULTIPLAYERCOURSE_API AUS_Minion : public ACharacter
 {
@@ -15,6 +18,15 @@ public:
 	// Sets default values for this character's properties
 	AUS_Minion();
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Minion AI")
+	float PatrolSpeed = 150.f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Minion AI")
+	float ChaseSpeed = 350.f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Minion AI")
+	float PatrolRadius = 50000.f;
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -26,13 +38,33 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, Category="Minion AI")
+	void SetNextPatrolLocation();
+
+	UFUNCTION(BlueprintCallable, Category="Minion AI")
+	void Chase(APawn* Pawn);
+
+	virtual void PostInitializeComponents() override;
+
+	FORCEINLINE UPawnSensingComponent* GetPawnSense() const {return PawnSense;}
+	FORCEINLINE USphereComponent* GetCollision() const {return Collision;}
+
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Minion Perception", meta=(AllowPrivateAccess="true"))
-	TObjectPtr<class UPawnSensingComponent> PawnSense;
+	TObjectPtr<UPawnSensingComponent> PawnSense;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Minion Perception", meta=(AllowPrivateAccess="true"))
-	TObjectPtr<class USphereComponent> Collision;
+	TObjectPtr<USphereComponent> Collision;
 
 	UPROPERTY()
 	FVector PatrolLocation;
+	
+	
+	UFUNCTION()
+	void OnPawnDetected(APawn* Pawn);
+
+	UFUNCTION()
+	void OnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
+
+	void PatrolLoop();
 };
